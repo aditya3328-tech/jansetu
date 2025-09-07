@@ -19,6 +19,7 @@ import Introduction from "./Introduction";
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     new LocomotiveScroll();
@@ -37,7 +38,18 @@ function App() {
             <img src="logo.png" alt="Logo" className="h-10 w-40 object-contain" />
           </Link>
 
-          {/* Links */}
+          {/* Mobile hamburger */}
+          <button
+            onClick={() => setMobileOpen((s) => !s)}
+            className="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100"
+            aria-label="Toggle menu"
+          >
+            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+
+          {/* Links (desktop) */}
           <div className="hidden md:flex space-x-8 text-gray-700">
             {[
               { name: "Home", link: "/" },
@@ -52,6 +64,7 @@ function App() {
                 key={idx}
                 to={item.link}
                 className="relative group hover:text-blue-600 transition"
+                onClick={() => setMobileOpen(false)}
               >
                 {item.name}
                 <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
@@ -62,11 +75,35 @@ function App() {
           {/* Login Button */}
           <Link
             to="/login"
-            className="ml-6 bg-gradient-to-r from-blue-500 to-blue-700 text-white px-5 py-2 rounded-lg shadow hover:shadow-lg transition"
+            className="ml-6 hidden md:inline-block bg-gradient-to-r from-blue-500 to-blue-700 text-white px-5 py-2 rounded-lg shadow hover:shadow-lg transition"
           >
             Login / Signup
           </Link>
         </nav>
+        {/* Mobile menu (slide down) */}
+        {mobileOpen && (
+          <div className="md:hidden bg-white shadow-md px-6 py-4">
+            <div className="flex flex-col space-y-3">
+              {[
+                { name: "Home", link: "/" },
+                { name: "Introduction to Civic Sense", link: "/introduction" },
+                { name: "Submit A Report", link: "/report" },
+                { name: "Community", link: "/community" },
+                { name: "Departments/Services", link: "/services" },
+                { name: "About Us", link: "/about" },
+                { name: "Contact Us", link: "/contact" },
+              ].map((item, idx) => (
+                <Link key={idx} to={item.link} onClick={() => setMobileOpen(false)} className="text-gray-700">
+                  {item.name}
+                </Link>
+              ))}
+
+              <Link to="/login" onClick={() => setMobileOpen(false)} className="mt-2 bg-gradient-to-r from-blue-500 to-blue-700 text-white px-4 py-2 rounded-lg shadow">
+                Login / Signup
+              </Link>
+            </div>
+          </div>
+        )}
       </div>
 
       <hr />

@@ -58,6 +58,7 @@ function Chatbot() {
         setLoading(false);
         return;
       }
+
       // safe default prompt for the model
       const promptSystem = `You are JanSetu Assistant. Answer briefly about JanSetu features only. If the user asks about submitting, tracking, community, contact or departments, prefer clear step-by-step instructions and link to the corresponding app page.`;
 
@@ -128,7 +129,7 @@ function Chatbot() {
       )}
 
       {open && (
-        <div className="w-[420px] max-h-[520px] h-[520px] bg-white shadow-2xl rounded-2xl flex flex-col overflow-hidden">
+        <div className="fixed z-50 inset-x-0 bottom-0 h-[70vh] sm:bottom-6 sm:right-6 sm:inset-auto sm:w-[420px] sm:h-[520px] bg-white shadow-2xl rounded-t-2xl sm:rounded-2xl flex flex-col overflow-hidden">
           <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-3 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <img src="/logo.png" alt="logo" className="w-8 h-8 rounded-full bg-white/20 p-1" />
@@ -158,7 +159,7 @@ function Chatbot() {
             </div>
           </div>
 
-          <div ref={scrollRef} className="flex-1 p-3 overflow-y-auto space-y-3 bg-gray-50">
+          <div ref={scrollRef} className="flex-1 p-3 overflow-y-auto space-y-3 bg-gray-50 pb-24">
             {messages.map((msg, idx) => (
               <div key={idx} className={`flex ${msg.sender === 'bot' ? 'justify-start' : 'justify-end'}`}>
                 <div className={`${msg.sender === 'bot' ? 'bg-white' : 'bg-blue-500 text-white'} rounded-lg p-3 max-w-[78%] shadow-sm`}
@@ -179,7 +180,7 @@ function Chatbot() {
             )}
           </div>
 
-          <div className="p-3 border-t">
+          <div className="p-3 border-t bg-white sticky bottom-0">
             <div className="flex items-center gap-2">
               <input
                 className="flex-1 border rounded-full px-3 py-2 text-sm focus:outline-none"

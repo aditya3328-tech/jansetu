@@ -17,12 +17,18 @@ export default function SplashScreen({ onFinish }) {
   }, [controls, onFinish]);
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen w-screen bg-gradient-to-br bg-white text-black">
-      <img className="h-40 mb-5" initial={{ opacity: 0, y: 10 }}
+    <div className="flex flex-col items-center justify-center min-h-screen w-screen bg-gradient-to-br from-white to-sky-50 text-black p-6">
+      <img
+        className="mb-4 h-28 md:h-40 w-auto object-contain"
+        initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6, duration: 0.6 }} src="logo.png" alt="" />
+        transition={{ delay: 0.6, duration: 0.6 }}
+        src="logo.png"
+        alt=""
+      />
+
       <motion.h1
-        className="text-2xl md:text-3xl font-bold mb-3"
+        className="text-xl md:text-3xl font-bold mb-2 text-center"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6, duration: 0.6 }}
@@ -31,7 +37,7 @@ export default function SplashScreen({ onFinish }) {
       </motion.h1>
 
       <motion.p
-        className="text-sm md:text-base text-black/90 mb-4"
+        className="text-xs md:text-base text-black/80 mb-3 text-center max-w-xl"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.9, duration: 0.6 }}
@@ -40,13 +46,13 @@ export default function SplashScreen({ onFinish }) {
       </motion.p>
 
       {/* Small partner logos */}
-      <div className="flex items-center justify-center gap-6 mb-4">
-        <img src="swacch-bharat.svg" alt="Swachh Bharat" className="h-10 w-auto object-contain" />
-        <img src="make-in-india.png" alt="Make in India" className="h-20 w-auto object-contain" />
+      <div className="flex items-center justify-center gap-4 mb-4">
+        <img src="swacch-bharat.svg" alt="Swachh Bharat" className="h-8 md:h-10 w-auto object-contain" />
+        <img src="make-in-india.png" alt="Make in India" className="h-8 md:h-20 w-auto object-contain" />
       </div>
 
-      {/* Progress bar */}
-      <div className="w-72 bg-white/20 rounded-full h-2 overflow-hidden">
+      {/* Progress bar - responsive width */}
+      <div className="w-full max-w-xs sm:max-w-sm md:max-w-md bg-white/20 rounded-full h-2 overflow-hidden">
         <motion.div
           className="h-2 bg-black"
           initial={{ width: 0 }}
