@@ -29,7 +29,7 @@ export default function DepartmentsPage() {
         <div className="absolute inset-0 opacity-30 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent pointer-events-none"></div>
         <div className="relative z-10 px-6 text-center">
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold mb-4 sm:mb-6 text-center drop-shadow-md flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-center">
-            <img className="h-14 sm:h-20 rounded-lg shadow-md" src="dept.png" alt="" />
+            <img className="h-14 sm:h-20 rounded-lg shadow-md" src="https://icons.veryicon.com/png/o/business/iconpack-003/department-13.pngg" alt="" />
             <span className="leading-tight text-xl sm:text-3xl">Departments & Services</span>
           </h1>
           <p className="text-sm sm:text-base md:text-xl max-w-3xl mx-auto text-white/90 px-2">
