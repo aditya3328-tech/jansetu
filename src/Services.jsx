@@ -29,7 +29,7 @@ export default function DepartmentsPage() {
         <div className="absolute inset-0 opacity-30 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent pointer-events-none"></div>
         <div className="relative z-10 px-6 text-center">
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold mb-4 sm:mb-6 text-center drop-shadow-md flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-center">
-            <img className="h-14 sm:h-20 rounded-lg shadow-md" src="https://icons.veryicon.com/png/o/business/iconpack-003/department-13.pngg" alt="" />
+            <img className="h-26 sm:h-20" src="https://svgsilh.com/svg/48859.svg" alt="" />
             <span className="leading-tight text-xl sm:text-3xl">Departments & Services</span>
           </h1>
           <p className="text-sm sm:text-base md:text-xl max-w-3xl mx-auto text-white/90 px-2">
@@ -63,10 +63,10 @@ export default function DepartmentsPage() {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-3 sm:mb-4 text-sky-800">Sanitation Department</h2>
             <p className="text-gray-700 leading-relaxed mb-4 sm:mb-6">Dedicated to keeping the city clean, hygienic, and waste-free. From daily garbage collection to large-scale cleanliness drives, this department ensures every corner of the city shines.</p>
             <ul className="space-y-3 text-gray-600 pl-4">
-              <li className="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" role="img" className="w-5 h-5 text-sky-500 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M3 7h18"/><path d="M6 7v13a2 2 0 002 2h8a2 2 0 002-2V7"/></svg> Daily waste collection and disposal monitoring</li>
-              <li className="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" role="img" className="w-5 h-5 text-sky-500 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg> Door-to-door garbage segregation initiatives</li>
-              <li className="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" role="img" className="w-5 h-5 text-sky-500 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M3 11h18"/><path d="M7 7v8"/></svg> Swachh Bharat awareness campaigns</li>
-              <li className="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" role="img" className="w-5 h-5 text-sky-500 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M3 3h18v4H3z"/><path d="M8 11v6"/></svg> Cleaning of drains and public areas</li>
+              <li className="flex items-start gap-3"><img className="h-7 w-7" src="https://cdn-icons-png.flaticon.com/512/8997/8997755.png" alt="" /> Daily waste collection and disposal monitoring</li>
+              <li className="flex items-start gap-3"><img className="h-7 w-7" src="https://www.creativefabrica.com/wp-content/uploads/2022/02/24/1645730055/Arch-Door.jpg" alt="" /> Door-to-door garbage segregation initiatives</li>
+              <li className="flex items-start gap-3"><img className="h-7 w-7" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4nk1xrvLxHLq_Tkk1AJGio80vJc0Vo6YKpA&s" alt="" />Swachh Bharat awareness campaigns</li>
+              <li className="flex items-start gap-3"><img className="h-7 w-7" src="https://www.fasthelp.in/wp-content/uploads/2022/04/drainage-cleaning.svg" alt="" /> Cleaning of drains and public areas</li>
             </ul>
           </div>
         </div>
@@ -80,10 +80,10 @@ export default function DepartmentsPage() {
             <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-emerald-800">Public Works Department</h2>
             <p className="text-gray-700 mb-6">Responsible for infrastructure maintenance and city development. From smooth roads to functioning streetlights, Public Works keeps the city running efficiently and safely.</p>
             <ul className="space-y-3 text-gray-600 pl-4">
-              <li className="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" role="img" className="w-5 h-5 text-emerald-500 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M3 12h18"/><path d="M6 12v6"/></svg> Road repair and pothole filling system</li>
-              <li className="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" role="img" className="w-5 h-5 text-emerald-500 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v6"/><path d="M12 16v6"/></svg> Streetlight monitoring and replacement</li>
-              <li className="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" role="img" className="w-5 h-5 text-emerald-500 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M4 6h16v2H4z"/><path d="M6 10v8"/></svg> Bridge and flyover construction oversight</li>
-              <li className="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" role="img" className="w-5 h-5 text-emerald-500 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M3 6h18"/><path d="M8 12h8"/></svg> Smart city projects implementation</li>
+              <li className="flex items-start gap-3"><img className="h-7 w-7" src="https://cdni.iconscout.com/illustration/premium/thumb/road-repair-worker-illustration-svg-png-download-3370083.png" alt="" /> Road repair and pothole filling system</li>
+              <li className="flex items-start gap-3"><img className="h-7 w-7" src="https://cdn-icons-png.freepik.com/256/5190/5190458.png" alt="" />  Streetlight monitoring and replacement</li>
+              <li className="flex items-start gap-3"><img className="h-7 w-7" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWdc0LTRQ_PvtxKmvukIVxDyd-2K-MVhftcg&s" alt="" /> Bridge and flyover construction oversight</li>
+              <li className="flex items-start gap-3"><img className="h-7 w-7" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQWp2V-kyQig7-i4C6phVICwjfFflmjUhqgQ&s" alt="" /> Smart city projects implementation</li>
             </ul>
           </div>
           <img
@@ -111,10 +111,10 @@ export default function DepartmentsPage() {
             <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-sky-700">Water Supply Department</h2>
             <p className="text-gray-700 leading-relaxed mb-6">Ensures safe, clean drinking water reaches every household. Constant monitoring and pipeline management guarantee reliability and quick action during leaks or disruptions.</p>
             <ul className="space-y-3 text-gray-600 pl-4">
-              <li className="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" role="img" className="w-5 h-5 text-sky-500 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"/></svg> Water quality testing & purification</li>
-              <li className="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" role="img" className="w-5 h-5 text-sky-500 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M3 12h18"/><path d="M6 12v6"/></svg> Pipeline leak detection & repair system</li>
-              <li className="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" role="img" className="w-5 h-5 text-sky-500 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v6"/><path d="M12 16v6"/></svg> 24/7 water supply monitoring</li>
-              <li className="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" role="img" className="w-5 h-5 text-sky-500 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M4 6h16v2H4z"/></svg> Rainwater harvesting projects</li>
+              <li className="flex items-start gap-3"><img className="h-7 w-7" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReGPCaUgmvXPaLXwLfwH556PIzZ2HCdqKcsg&s" alt="" /> Water quality testing & purification</li>
+              <li className="flex items-start gap-3"><img className="h-7 w-7" src="https://cdn-icons-png.flaticon.com/512/900/900630.png" alt="" /> Pipeline leak detection & repair system</li>
+              <li className="flex items-start gap-3"><img className="h-7 w-7" src="https://cdn-icons-png.flaticon.com/512/3870/3870832.png" alt="" /> 24/7 water supply monitoring</li>
+              <li className="flex items-start gap-3"><img className="h-7 w-7" src="https://cdn-icons-png.flaticon.com/512/17015/17015580.png" alt="" /> Rainwater harvesting projects</li>
             </ul>
           </div>
         </div>
@@ -128,10 +128,10 @@ export default function DepartmentsPage() {
             <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-teal-800">Parks & Environment</h2>
             <p className="text-gray-700 mb-6">Green lungs of the city, this department maintains parks, promotes plantations, and leads eco-friendly initiatives for sustainable living.</p>
             <ul className="space-y-3 text-gray-600 pl-4">
-              <li className="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" role="img" className="w-5 h-5 text-teal-500 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20"/></svg> Maintenance of parks & gardens</li>
-              <li className="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" role="img" className="w-5 h-5 text-teal-500 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M3 12h18"/><path d="M7 7v8"/></svg> Tree plantation & biodiversity drives</li>
-              <li className="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" role="img" className="w-5 h-5 text-teal-500 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M4 6h16v2H4z"/></svg> Eco-friendly civic development</li>
-              <li className="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" role="img" className="w-5 h-5 text-teal-500 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M12 5v14"/></svg> Public awareness on environmental issues</li>
+              <li className="flex items-start gap-3"><img className="h-7 w-7" src="https://cdni.iconscout.com/illustration/premium/thumb/gardener-watering-plants-at-the-park-illustration-svg-png-download-10369528.png" alt="" /> Maintenance of parks & gardens</li>
+              <li className="flex items-start gap-3"><img className="h-7 w-7" src="https://img.freepik.com/free-vector/hand-drawn-flat-design-tree-planting-illustration_23-2149210052.jpg?semt=ais_hybrid&w=740&q=80" alt="" /> Tree plantation & biodiversity drives</li>
+              <li className="flex items-start gap-3"><img className="h-7 w-7" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP-JZorbXYvHWnaaS4JNAMNqEx4N4XL0w1WQ&s" alt="" /> Eco-friendly civic development</li>
+              <li className="flex items-start gap-3"><img className="h-7 w-7" src="https://cdni.iconscout.com/illustration/premium/thumb/boy-is-raising-awareness-for-earth-day-illustration-svg-png-download-6629290.png" alt="" /> Public awareness on environmental issues</li>
             </ul>
           </div>
           <img
@@ -159,10 +159,10 @@ export default function DepartmentsPage() {
               <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-red-700">Emergency Services</h2>
               <p className="text-gray-700 leading-relaxed mb-6">Provides immediate response to crises including fire, flood, earthquakes, and medical emergencies. Ensures citizen safety with fast, coordinated action.</p>
               <ul className="space-y-3 text-gray-600 pl-4">
-                  <li className="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" role="img" className="w-5 h-5 text-red-500 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M3 12h18"/><path d="M12 6v12"/></svg> Fire safety & rescue operations</li>
-                  <li className="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" role="img" className="w-5 h-5 text-red-500 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v6"/><path d="M12 16v6"/></svg> Disaster preparedness training</li>
-                  <li className="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" role="img" className="w-5 h-5 text-red-500 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"/></svg> Emergency hotline & quick response teams</li>
-                  <li className="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" role="img" className="w-5 h-5 text-red-500 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M4 6h16v2H4z"/></svg> Medical emergency coordination</li>
+                  <li className="flex items-start gap-3"><img className="h-7 w-7" src="https://previews.123rf.com/images/archivector/archivector1902/archivector190200033/116594938-fire-safety-red-banner-isolated-on-white-background-fire-extinguisher-and-flame-symbols-vector.jpg" alt="" /> Fire safety & rescue operations</li>
+                  <li className="flex items-start gap-3"><img className="h-7 w-7" src="https://www.shutterstock.com/image-illustration/3d-illustration-hand-holding-megaphone-600nw-2581856891.jpg" alt="" /> Disaster preparedness training</li>
+                  <li className="flex items-start gap-3"><img className="h-7 w-7" src="https://upload.wikimedia.org/wikipedia/commons/2/2f/ISO_6309_-_3_-_Emergency_Phone.svg" alt="" /> Emergency hotline & quick response teams</li>
+                  <li className="flex items-start gap-3"><img className="h-7 w-7" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1XihGPc40igr0YwUSdmx-8-vXRg94cYPmkw&s" alt="" /> Medical emergency coordination</li>
                 </ul>
             </div>
           </div>
