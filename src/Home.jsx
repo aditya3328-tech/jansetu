@@ -221,12 +221,21 @@ function FeatureCard({ icon, title, text, link, linkText }) {
 
       {link && (
         <div className="mt-6">
-          <Link
-            to={link}
-            className="text-blue-600 font-medium hover:underline text-base"
-          >
-            {linkText}
-          </Link>
+          {link === "#chat" ? (
+            <button
+              onClick={() => window.dispatchEvent(new Event("open-chat"))}
+              className="text-blue-600 font-medium hover:underline text-base bg-transparent"
+            >
+              {linkText}
+            </button>
+          ) : (
+            <Link
+              to={link}
+              className="text-blue-600 font-medium hover:underline text-base"
+            >
+              {linkText}
+            </Link>
+          )}
         </div>
       )}
     </motion.article>
@@ -269,6 +278,17 @@ export default function Home() {
       link: "/contact",
       linkText: "Contact Us →",
     },
+    {
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+        </svg>
+      ),
+      title: "Chatbot Assistant",
+      text: "Quick help about reporting, tracking and using JanSetu. Click to open the assistant.",
+      link: "#chat",
+      linkText: "Open Chat →",
+    },
   ];
 
   const howItWorks = [
@@ -296,7 +316,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen w-full bg-gray-50 flex flex-col items-center p-6">
+    <div className="min-h-screen w-full bg-gradient-to-b from-white via-sky-50 to-gray-50 flex flex-col items-center p-6">
       {/* HERO */}
       <header className="w-full max-w-6xl text-center mb-20">
         <motion.div
@@ -305,11 +325,11 @@ export default function Home() {
           variants={staggerContainer}
           className="flex flex-col items-center"
         >
-          <motion.h1 variants={fadeUp} className="text-4xl md:text-5xl font-extrabold text-blue-900 leading-tight">
+          <motion.h1 variants={fadeUp} className="text-4xl md:text-5xl font-extrabold text-sky-900 leading-tight tracking-tight">
             JanSetu — Civic Sense Portal
           </motion.h1>
 
-          <motion.p variants={fadeUp} className="text-gray-600 mt-5 max-w-2xl mx-auto text-base md:text-lg">
+          <motion.p variants={fadeUp} className="text-slate-700 mt-5 max-w-2xl mx-auto text-base md:text-lg">
             A one-stop platform to report civic issues, engage with your community, and track real-time solutions.
             Together, we build smarter, cleaner, and more accountable cities.
           </motion.p>
@@ -317,24 +337,25 @@ export default function Home() {
           <motion.div variants={fadeUp} className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               to="/report"
-              className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition text-sm md:text-base"
+              className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-sky-500 text-white px-6 py-3 rounded-xl shadow-lg hover:scale-[1.01] transform transition text-sm md:text-base"
               aria-label="Submit a new civic report"
             >
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M9 3h6v4H9z"/><rect x="4" y="7" width="16" height="14" rx="2"/></svg>
               Report an Issue
             </Link>
             <Link
               to="/login"
-              className="inline-block bg-white border border-blue-600 text-blue-600 px-6 py-3 rounded-lg shadow hover:bg-gray-100 transition text-sm md:text-base"
+              className="inline-flex items-center gap-3 bg-white border border-sky-300 text-sky-700 px-6 py-3 rounded-xl shadow-sm hover:bg-white/80 transition text-sm md:text-base"
               aria-label="Login or signup"
             >
               Login / Signup
             </Link>
             <Link
               to="/introduction"
-              className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition text-sm md:text-base"
+              className="inline-flex items-center gap-3 bg-white/80 text-sky-900 px-6 py-3 rounded-xl shadow-sm hover:shadow-md transition text-sm md:text-base"
               aria-label="Introduction To Civic Sense"
             >
-              Introduction To Civic Sense
+              Introduction
             </Link>
           </motion.div>
         </motion.div>
@@ -356,18 +377,18 @@ export default function Home() {
 
         {/* How It Works */}
         <section className="mt-12 text-center">
-          <motion.h2 variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-2xl md:text-3xl font-bold text-blue-900 mb-4">
+          <motion.h2 variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-2xl md:text-3xl font-bold text-sky-900 mb-4">
             ⚙️ How It Works
           </motion.h2>
-          <motion.p variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-gray-600 max-w-6xl mx-auto mb-10">
+          <motion.p variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-slate-600 max-w-6xl mx-auto mb-10">
             Simple workflow — report, track, resolve. We help ensure complaints don't fall through the cracks.
           </motion.p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6">
             {howItWorks.map((s, idx) => (
-              <motion.div key={idx} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="bg-white rounded-2xl p-8 shadow-lg flex flex-col h-full">
-                <h3 className="font-bold text-xl text-blue-800">{s.title}</h3>
-                <p className="text-gray-600 text-base mt-3">{s.desc}</p>
+              <motion.div key={idx} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="bg-white rounded-2xl p-8 shadow-sm flex flex-col h-full border border-gray-100">
+                <h3 className="font-bold text-xl text-sky-800">{s.title}</h3>
+                <p className="text-slate-600 text-base mt-3">{s.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -375,30 +396,83 @@ export default function Home() {
 
         {/* Why Choose JanSetu */}
         <section className="mt-12 text-center">
-          <motion.h2 variants={fadeUp} initial="hidden" whileInView="visible" className="text-2xl md:text-3xl font-bold text-blue-900 mb-4">
+          <motion.h2 variants={fadeUp} initial="hidden" whileInView="visible" className="text-2xl md:text-3xl font-bold text-sky-900 mb-4">
             🌟 Why Choose JanSetu?
           </motion.h2>
-          <motion.p variants={fadeUp} initial="hidden" whileInView="visible" className="text-gray-700 max-w-3xl mx-auto mb-8">
+          <motion.p variants={fadeUp} initial="hidden" whileInView="visible" className="text-slate-700 max-w-3xl mx-auto mb-8">
             A citizens-first platform combining transparency, accountability and reward mechanics to improve city life.
           </motion.p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6">
             {benefits.map((b, i) => (
-              <motion.div key={i} variants={fadeUp} className="bg-white rounded-2xl shadow-lg p-8 flex flex-col h-full items-center">
+              <motion.div key={i} variants={fadeUp} className="bg-white rounded-2xl shadow-sm p-8 flex flex-col h-full items-center border border-gray-100">
                 {b.img && (
                   <img src={b.img} alt={b.title} className="w-28 h-28 object-contain mb-4 rounded-md" />
                 )}
-                <h4 className="font-bold text-xl text-blue-800 text-center">{b.title}</h4>
-                <p className="text-gray-600 text-base mt-3 text-center">{b.desc}</p>
+                <h4 className="font-bold text-xl text-sky-800 text-center">{b.title}</h4>
+                <p className="text-slate-600 text-base mt-3 text-center">{b.desc}</p>
               </motion.div>
+            ))}
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="mt-12 w-full max-w-4xl mx-auto" id="faq">
+          <motion.h2 variants={fadeUp} initial="hidden" whileInView="visible" className="text-2xl md:text-3xl font-bold text-sky-900 mb-6 text-center">
+            ❓ Frequently Asked Questions
+          </motion.h2>
+
+          <div className="space-y-3">
+            {[
+              {
+                q: "How do I submit a report?",
+                a: "Use the 'Submit a Report' form: add a short title, clear photos, description, and allow location. You can also attach a voice note."
+              },
+              {
+                q: "Can I track my report status?",
+                a: "Yes — after submission you get a report ID and status updates; visit 'Track Reports' to view progress."
+              },
+              {
+                q: "How do I join the community?",
+                a: "Open the Community page from the menu, create posts, and interact with neighbors by commenting and sharing media."
+              },
+              {
+                q: "Who responds to reports?",
+                a: "Relevant municipal departments (Sanitation, Public Works, Water Supply, Parks, Emergency Services) receive and action reports based on type and location."
+              },
+              {
+                q: "Is my personal data safe?",
+                a: "Yes — JanSetu follows standard data protection practices. Personal contacts are used only for follow-up and not shared publicly."
+              },
+              {
+                q: "How can I get rewards for civic actions?",
+                a: "Active contributors earn points for verified reports and community engagement; check your profile for points and rewards."
+              }
+            ].map((item, i) => (
+              <details key={i} className="bg-white rounded-xl p-4 shadow-sm" open={i === 0}>
+                <summary className="cursor-pointer font-semibold text-sky-800 list-none flex items-center justify-between">
+                  <span>{item.q}</span>
+                  <svg
+                    className="w-5 h-5 ml-4 text-sky-600 transition-transform duration-200"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path d="M6 8l4 4 4-4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </summary>
+                <div className="mt-2 text-slate-600">{item.a}</div>
+                <style>{`details[open] > summary svg{ transform: rotate(180deg); }`}</style>
+              </details>
             ))}
           </div>
         </section>
 
         {/* Role-based Panels */}
         <section className="mt-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-blue-900 mb-4 text-center">🚀 What We Offer</h2>
-          <p className="text-gray-700 max-w-3xl mx-auto mb-6 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-sky-900 mb-4 text-center">🚀 What We Offer</h2>
+          <p className="text-slate-700 max-w-3xl mx-auto mb-6 text-center">
             Role-based tools and citizen-first features to report, monitor, and resolve civic issues quickly.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
@@ -409,20 +483,20 @@ export default function Home() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl shadow-lg p-6 flex flex-col h-full"
+                className="bg-white rounded-2xl shadow-sm p-6 flex flex-col h-full border border-gray-100"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-lg bg-sky-50 text-sky-600 flex items-center justify-center">
                     {React.cloneElement(p.icon, { className: "w-6 h-6" })}
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg text-blue-800">{p.title}</h3>
-                    <p className="text-gray-600 text-base mt-1">{p.desc}</p>
+                    <h3 className="font-bold text-lg text-sky-800">{p.title}</h3>
+                    <p className="text-slate-600 text-base mt-1">{p.desc}</p>
                   </div>
                 </div>
 
                 <div className="mt-4">
-                  <Link to={p.link} className="text-blue-600 font-medium hover:underline">
+                  <Link to={p.link} className="text-sky-600 font-medium hover:underline">
                     Explore →
                   </Link>
                 </div>
@@ -430,7 +504,7 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center mt-6">
-            <Link to="/report" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition">
+            <Link to="/report" className="inline-block bg-gradient-to-r from-sky-600 to-blue-600 text-white px-6 py-3 rounded-xl shadow-lg hover:scale-[1.01] transition">
               Start Reporting →
             </Link>
           </div>

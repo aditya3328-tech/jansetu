@@ -9,6 +9,9 @@ export default function ReportPage() {
   const [video, setVideo] = useState(null);
   const [audioURL, setAudioURL] = useState(null);
   const [recording, setRecording] = useState(false);
+  const [informerName, setInformerName] = useState("");
+  const [informerPhone, setInformerPhone] = useState("");
+  const [informerEmail, setInformerEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const mediaRecorderRef = useRef(null);
 
@@ -74,13 +77,16 @@ export default function ReportPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const reportData = {
-      title,
-      description,
-      location,
-      landmark,
-      images,
-      video,
-      audioURL,
+  title,
+  description,
+  location,
+  landmark,
+  images,
+  video,
+  audioURL,
+  informerName,
+  informerPhone,
+  informerEmail,
     };
     console.log("Report Submitted:", reportData);
 
@@ -92,6 +98,9 @@ export default function ReportPage() {
     setImages([]);
     setVideo(null);
     setAudioURL(null);
+  setInformerName("");
+  setInformerPhone("");
+  setInformerEmail("");
 
     // Show success message
     setSubmitted(true);
@@ -121,13 +130,86 @@ export default function ReportPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-blue-50 via-gray-50 to-blue-50 py-16 px-6">
-      <h2 className="text-4xl font-extrabold text-center text-blue-700 mb-12 drop-shadow">
-        📝 Submit a Report
-      </h2>
+      <div className="max-w-3xl mx-auto text-center mb-8">
+        <h2 className="text-4xl font-extrabold text-center text-blue-700 mb-4 drop-shadow">
+          📝 Submit a Report
+        </h2>
+        <p className="text-sm text-gray-600 mb-3">Follow the steps to file a precise report — photos, location and clear description help teams act faster.</p>
+        <div className="flex items-center justify-center gap-3">
+          <button
+            onClick={() => document.getElementById('submit-instructions')?.classList.remove('hidden')}
+            className="inline-flex items-center gap-2 bg-white border border-sky-200 text-sky-700 px-4 py-2 rounded-full shadow-sm hover:shadow-md"
+          >
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M12 2v6"/><path d="M12 16v6"/><circle cx="12" cy="12" r="9"/></svg>
+            How to submit
+          </button>
+        </div>
+      </div>
       <form
         onSubmit={handleSubmit}
         className="max-w-3xl mx-auto bg-white p-10 rounded-2xl shadow-2xl space-y-8 border border-gray-100"
       >
+        {/* Instructions Modal (hidden by default) */}
+  <div id="submit-instructions" className="fixed inset-0 z-50 hidden items-start justify-center pt-24 px-4">
+          <div className="bg-white rounded-2xl w-full max-w-xl shadow-lg p-6 border">
+            <div className="flex justify-between items-start">
+              <h3 className="text-xl font-bold">How to submit an effective report</h3>
+              <button onClick={() => document.getElementById('submit-instructions')?.classList.add('hidden')} className="text-gray-400">✖</button>
+            </div>
+            <ol className="mt-4 space-y-3 text-sm text-gray-700">
+              <li className="flex gap-3 items-start">
+                <span className="font-semibold text-sky-600">1.</span>
+                <div>
+                  <div>Title: write a short descriptive title — e.g., "Pothole near Market Road".</div>
+                  <div className="text-gray-600 mt-1">शीर्षक: एक छोटा वर्णनात्मक शीर्षक लिखें — जैसे, "मार्केट रोड के पास गड्ढा"।</div>
+                </div>
+              </li>
+
+              <li className="flex gap-3 items-start">
+                <span className="font-semibold text-sky-600">2.</span>
+                <div>
+                  <div>Description: include details, severity and any hazards (time, obstruction).</div>
+                  <div className="text-gray-600 mt-1">विवरण: विवरण शामिल करें, गंभीरता और किसी भी खतरे (समय, बाधा) का उल्लेख करें।</div>
+                </div>
+              </li>
+
+              <li className="flex gap-3 items-start">
+                <span className="font-semibold text-sky-600">3.</span>
+                <div>
+                  <div>Location: use auto-detected address or paste GPS coordinates for exact placement.</div>
+                  <div className="text-gray-600 mt-1">स्थान: ऑटो-डिटेक्टेड पता उपयोग करें या सटीक स्थान के लिए जीपीएस निर्देशांक पेस्ट करें।</div>
+                </div>
+              </li>
+
+              <li className="flex gap-3 items-start">
+                <span className="font-semibold text-sky-600">4.</span>
+                <div>
+                  <div>Photos & Video: add clear images from multiple angles; videos help show active hazards.</div>
+                  <div className="text-gray-600 mt-1">फ़ोटो और वीडियो: कई कोणों से स्पष्ट तस्वीरें जोड़ें; वीडियो सक्रिय खतरों को दिखाने में मदद करता है।</div>
+                </div>
+              </li>
+
+              <li className="flex gap-3 items-start">
+                <span className="font-semibold text-sky-600">5.</span>
+                <div>
+                  <div>Voice note (optional): describe the situation if typing isn't convenient.</div>
+                  <div className="text-gray-600 mt-1">वॉइस नोट (वैकल्पिक): यदि टाइप करना सुविधाजनक नहीं है, तो स्थिति का वर्णन करें।</div>
+                </div>
+              </li>
+
+              <li className="flex gap-3 items-start">
+                <span className="font-semibold text-sky-600">6.</span>
+                <div>
+                  <div>Tags/Landmark: add a nearby landmark to help field teams find the spot.</div>
+                  <div className="text-gray-600 mt-1">टैग/लैंडमार्क: नज़दीकी लैंडमार्क जोड़ें ताकि फील्ड टीम को जगह ढूँढने में आसानी हो।</div>
+                </div>
+              </li>
+            </ol>
+            <div className="mt-5 text-right">
+              <button onClick={() => document.getElementById('submit-instructions')?.classList.add('hidden')} className="px-4 py-2 bg-sky-600 text-white rounded-lg">Got it</button>
+            </div>
+          </div>
+        </div>
         {/* Title */}
         <div>
           <label className="block font-semibold mb-2 text-gray-700">Title</label>
@@ -180,6 +262,42 @@ export default function ReportPage() {
             value={landmark}
             onChange={(e) => setLandmark(e.target.value)}
           />
+        </div>
+
+        {/* Informer Contact Details */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div>
+            <label className="block font-semibold mb-2 text-gray-700">Informer Name</label>
+            <input
+              type="text"
+              className="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-400 outline-none"
+              placeholder="Your name"
+              value={informerName}
+              onChange={(e) => setInformerName(e.target.value)}
+            />
+          </div>
+
+          <div>
+            <label className="block font-semibold mb-2 text-gray-700">Contact Number</label>
+            <input
+              type="tel"
+              className="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-400 outline-none"
+              placeholder="Phone number"
+              value={informerPhone}
+              onChange={(e) => setInformerPhone(e.target.value)}
+            />
+          </div>
+
+          <div>
+            <label className="block font-semibold mb-2 text-gray-700">Email</label>
+            <input
+              type="email"
+              className="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-400 outline-none"
+              placeholder="Email address"
+              value={informerEmail}
+              onChange={(e) => setInformerEmail(e.target.value)}
+            />
+          </div>
         </div>
 
         {/* Image Upload */}

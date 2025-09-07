@@ -17,7 +17,7 @@ export default function SplashScreen({ onFinish }) {
   }, [controls, onFinish]);
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen w-screen bg-gradient-to-br from-blue-600 to-indigo-500 text-white">
+    <div className="flex flex-col items-center justify-center h-screen w-screen bg-gradient-to-br bg-white text-black">
       <img className="h-40 mb-5" initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6, duration: 0.6 }} src="logo.png" alt="" />
@@ -31,7 +31,7 @@ export default function SplashScreen({ onFinish }) {
       </motion.h1>
 
       <motion.p
-        className="text-sm md:text-base text-white/90 mb-6"
+        className="text-sm md:text-base text-black/90 mb-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.9, duration: 0.6 }}
@@ -39,10 +39,16 @@ export default function SplashScreen({ onFinish }) {
         Preparing your experience…
       </motion.p>
 
+      {/* Small partner logos */}
+      <div className="flex items-center justify-center gap-6 mb-4">
+        <img src="swacch-bharat.svg" alt="Swachh Bharat" className="h-10 w-auto object-contain" />
+        <img src="make-in-india.png" alt="Make in India" className="h-20 w-auto object-contain" />
+      </div>
+
       {/* Progress bar */}
       <div className="w-72 bg-white/20 rounded-full h-2 overflow-hidden">
         <motion.div
-          className="h-2 bg-white"
+          className="h-2 bg-black"
           initial={{ width: 0 }}
           animate={{ width: "100%" }}
           transition={{ duration: 2.1, ease: "easeInOut" }}
