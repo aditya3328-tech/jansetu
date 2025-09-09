@@ -14,6 +14,7 @@ import Chatbot from "./Chatbot";
 import LocomotiveScroll from "locomotive-scroll";
 import SplashScreen from "./SplashScreen";
 import Introduction from "./Introduction";
+import Trackmyreport from "./Trackmyreport";
 
 
 
@@ -118,6 +119,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/report" element={<Submitareport />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/trackmyreport" element={<Trackmyreport />} />
           <Route path="/introduction" element={<Introduction />} />
         </Routes>
       </div>

@@ -1,0 +1,50 @@
+State/UT,District
+Andhra Pradesh,Anakapalli
+Andhra Pradesh,Anantapur
+Andhra Pradesh,Annamayya
+Andhra Pradesh,Bapatla
+Andhra Pradesh,Chittoor
+Andhra Pradesh,East Godavari
+Andhra Pradesh,Eluru
+Andhra Pradesh,Guntur
+Andhra Pradesh,Kakinada
+Andhra Pradesh,Konaseema
+Andhra Pradesh,Krishna
+Andhra Pradesh,Kurnool
+Andhra Pradesh,Nandyal
+Andhra Pradesh,NTR
+Andhra Pradesh,Palnadu
+Andhra Pradesh,Prakasam
+Andhra Pradesh,Sri Potti Sriramulu Nellore
+Andhra Pradesh,Sri Sathya Sai
+Andhra Pradesh,Srikakulam
+Andhra Pradesh,Tirupati
+Andhra Pradesh,Visakhapatnam
+Andhra Pradesh,Vizianagaram
+Andhra Pradesh,West Godavari
+Andhra Pradesh,YSR Kadapa
+Arunachal Pradesh,Anjaw
+Arunachal Pradesh,Changlang
+Arunachal Pradesh,East Kameng
+Arunachal Pradesh,East Siang
+Arunachal Pradesh,Kamle
+Arunachal Pradesh,Kra Daadi
+Arunachal Pradesh,Kurung Kumey
+Arunachal Pradesh,Lepa Rada
+Arunachal Pradesh,Lohit
+Arunachal Pradesh,Longding
+Arunachal Pradesh,Lower Dibang Valley
+Arunachal Pradesh,Lower Siang
+Arunachal Pradesh,Lower Subansiri
+Arunachal Pradesh,Namsai
+Arunachal Pradesh,Pakke-Kessang
+Arunachal Pradesh,Papum Pare
+Arunachal Pradesh,Shi Yomi
+Arunachal Pradesh,Siang
+Arunachal Pradesh,Tawang
+Arunachal Pradesh,Tirap
+Arunachal Pradesh,Upper Dibang Valley
+Arunachal Pradesh,Upper Siang
+Arunachal Pradesh,Upper Subansiri
+Arunachal Pradesh,West Kameng
+Arunachal Pradesh,West Siang
