@@ -67,7 +67,7 @@ function Chatbot() {
 
       const response = await axios.post(
         // NOTE: keep using the existing endpoint if configured; consider moving key to env
-        "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyDWieOm9RcugoA8Hoa84XgtwDkUshhDyMM",
+        "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyDWieOm9RcugoA8Hoa84XgtwDkUshhDyMM",
         {
           contents: [
             { parts: [{ text: promptSystem }, { text: knowledgeSummary }, { text }] }
