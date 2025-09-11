@@ -18,6 +18,10 @@ export default function ReportPage() {
   const [submitted, setSubmitted] = useState(false);
   const [lastReport, setLastReport] = useState(null);
   const mediaRecorderRef = useRef(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+
+
   // Auto-detect location
   useEffect(() => {
     if ("geolocation" in navigator) {
@@ -129,6 +133,18 @@ export default function ReportPage() {
 
   // Submit handler
   const handleSubmit = (e) => {
+      e.preventDefault();
+  if (!/^\d{10}$/.test(informerPhone)) {
+    alert("Please enter a valid 10-digit phone number.");
+    return;
+  }
+  if (!/^\d{6}$/.test(pincode)) {
+    alert("Please enter a valid 6-digit pincode.");
+    return;
+  }
+  setIsSubmitting(true);
+  setTimeout(() => setIsSubmitting(false), 1000);
+  
     e.preventDefault();
     // prepare preview URLs for images/video
     const imagePreviews = images && images.length ? images.map((f) => URL.createObjectURL(f)) : [];
@@ -523,12 +539,14 @@ export default function ReportPage() {
         </div>
 
         {/* Submit Button */}
-        <button
-          type="submit"
-          className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 rounded-xl font-bold text-lg shadow-xl hover:scale-105 transition"
-        >
-          🚀 Submit Report
-        </button>
+       <button
+  type="submit"
+  disabled={isSubmitting}
+  className={`w-full py-4 rounded-xl font-bold text-lg shadow-xl transition
+    ${isSubmitting ? "bg-gray-400 cursor-not-allowed" : "bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:scale-105"}`}
+>
+  {isSubmitting ? "Submitting..." : "🚀 Submit Report"}
+</button>
       </form>
       {/* Show most recent submitted report (from local state or storage) */}
   <Trackmyreport {...(lastReport || {})} />
