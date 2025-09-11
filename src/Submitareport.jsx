@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import Trackmyreport from "./Trackmyreport";
+import { Link } from "react-router-dom";
 
 export default function ReportPage() {
   const [title, setTitle] = useState("");
@@ -211,6 +211,9 @@ export default function ReportPage() {
             Thank you for reporting. You can track your report in the{" "}
             <strong>Track Reports</strong> section.
           </p>
+          <Link to="/trackmyreport" className="bg-blue-700 text-white px-6 py-3 rounded-xl font-bold shadow hover:scale-105 transition" >
+            Track Your Report
+          </Link>
           <button
             onClick={() => setSubmitted(false)}
             className="bg-blue-700 text-white px-6 py-3 rounded-xl font-bold shadow hover:scale-105 transition"
@@ -549,7 +552,7 @@ export default function ReportPage() {
 </button>
       </form>
       {/* Show most recent submitted report (from local state or storage) */}
-  <Trackmyreport {...(lastReport || {})} />
+
     </div>
   );
 }

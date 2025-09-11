@@ -177,129 +177,146 @@ function CommunityPage() {
           </div>
 
           {/* Create Post Modal */}
-          {showCreate && (
-            <div className="fixed inset-0 bg-black/30 flex justify-center items-start pt-20 z-50">
-              <div className="bg-white rounded-xl w-full max-w-lg shadow-lg p-6">
-                {/* Header */}
-                <h2 className="text-xl font-bold mb-4">Create New Post</h2>
+         {showCreate && (
+  <div className="fixed h-screen w-screen inset-0 bg-black/70 flex justify-center items-center z-50 px-4">
+    {/* Scrollable modal container */}
+    <div className="bg-white rounded-xl w-full max-w-lg max-h-[90vh] shadow-lg p-6 overflow-y-auto">
+      {/* Header */}
+      <div className="flex justify-between items-center mb-4">
+        <h2 className="text-xl font-bold">Create New Post</h2>
+        <button
+          onClick={() => setShowCreate(false)}
+          className="text-gray-500 hover:text-gray-700 text-xl font-bold"
+        >
+          ✖
+        </button>
+      </div>
 
-                {/* Input */}
-                <input
-                  type="text"
-                  placeholder="Add a short title (optional)"
-                  value={newPost.title}
-                  onChange={(e) => setNewPost({ ...newPost, title: e.target.value })}
-                  className="w-full border border-gray-200 rounded-lg p-2 mb-3"
-                />
-                <textarea
-                  placeholder="What's on your mind?"
-                  value={newPost.content}
-                  onChange={(e) =>
-                    setNewPost({ ...newPost, content: e.target.value })
-                  }
-                  className="w-full border border-blue-400 focus:ring-2 focus:ring-blue-400 focus:outline-none rounded-lg p-3 mb-4 h-32 resize-none"
-                ></textarea>
+      {/* Input */}
+      <input
+        type="text"
+        placeholder="Add a short title (optional)"
+        value={newPost.title}
+        onChange={(e) => setNewPost({ ...newPost, title: e.target.value })}
+        className="w-full border border-gray-200 rounded-lg p-2 mb-3"
+      />
+      <textarea
+        placeholder="What's on your mind?"
+        value={newPost.content}
+        onChange={(e) => setNewPost({ ...newPost, content: e.target.value })}
+        className="w-full border border-blue-400 focus:ring-2 focus:ring-blue-400 focus:outline-none rounded-lg p-3 mb-4 h-32 resize-none"
+      ></textarea>
 
-                {/* Hashtags input */}
-                <input
-                  type="text"
-                  placeholder="Add hashtags (comma separated)"
-                  value={newPost.hashtags}
-                  onChange={(e) => setNewPost({ ...newPost, hashtags: e.target.value })}
-                  className="w-full border border-gray-200 rounded-lg p-2 mb-4"
-                />
+      {/* Hashtags input */}
+      <input
+        type="text"
+        placeholder="Add hashtags (comma separated)"
+        value={newPost.hashtags}
+        onChange={(e) => setNewPost({ ...newPost, hashtags: e.target.value })}
+        className="w-full border border-gray-200 rounded-lg p-2 mb-4"
+      />
 
-                {/* Options */}
-                <div className="flex justify-around text-gray-600 text-sm mb-4">
-                  <button
-                    onClick={() => document.getElementById("photoInput").click()}
-                    className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100"
-                  >
-                    <img className="h-5" src="https://svgsilh.com/svg_v2/2027073.svg" alt="" /> Photo
-                  </button>
-                  <button
-                    onClick={() => document.getElementById("videoInput").click()}
-                    className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100"
-                  >
-                   <img className="h-5" src="https://www.iconpacks.net/icons/1/free-video-icon-818-thumb.png" alt="" /> Video
-                  </button>
-                  <button
-                    onClick={() => alert("Poll feature coming soon!")}
-                    className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100"
-                  >
-                    <img className="h-5" src="https://www.svgrepo.com/show/334410/bar-chart-alt-2.svg" alt="" /> Poll
-                  </button>
-                  <button
-                    onClick={() => {
-                      const url = prompt("Enter link URL:");
-                      if (url) setNewPost({ ...newPost, image: url });
-                    }}
-                    className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100"
-                  >
-                    <img className="h-5" src="https://www.svgrepo.com/show/116705/link-interface-symbol-rotated-to-right.svg" alt="" /> Link
-                  </button>
-                </div>
+      {/* Options */}
+      <div className="flex justify-around text-gray-600 text-sm mb-4">
+        <button
+          onClick={() => document.getElementById("photoInput").click()}
+          className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100"
+        >
+          <img className="h-5" src="https://img.freepik.com/free-vector/classic-black-camera-white-background_1308-132154.jpg?semt=ais_hybrid&w=740&q=80" alt="" /> Photo
+        </button>
+        <button
+          onClick={() => document.getElementById("videoInput").click()}
+          className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100"
+        >
+         <img className="h-5" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCka6L69by6YiAbIR1SjaloSl5_xGevcWGeQ&s" alt="" /> Video
+        </button>
+        <button
+          onClick={() => alert("Poll feature coming soon!")}
+          className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100"
+        >
+         <img className="h-5" src="https://www.svgrepo.com/show/334410/bar-chart-alt-2.svg" alt="" /> Poll
+        </button>
+        <button
+          onClick={() => {
+            const url = prompt("Enter link URL:");
+            if (url) setNewPost({ ...newPost, image: url });
+          }}
+          className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100"
+        >
+          <img className="h-5" src="https://www.svgrepo.com/show/116705/link-interface-symbol-rotated-to-right.svg" alt="" /> Link
+        </button>
+      </div>
 
-                {/* Hidden File Inputs */}
-                <input
-                  type="file"
-                  id="photoInput"
-                  accept="image/*"
-                  className="hidden"
-                  onChange={(e) => {
-                    const f = e.target.files && e.target.files[0];
-                    if (f) setNewPost({ ...newPost, image: URL.createObjectURL(f) });
-                  }}
-                />
-                {/* Media Preview */}
-                {(newPost.image || newPost.video) && (
-                  <div className="mb-4">
-                    <div className="relative">
-                      {newPost.image && (
-                        <img src={newPost.image} alt="preview" className="w-full max-h-64 object-contain rounded-lg" />
-                      )}
-                      {newPost.video && (
-                        <video controls src={newPost.video} className="w-full max-h-64 rounded-lg" />
-                      )}
-                      <button
-                        onClick={() => setNewPost({ ...newPost, image: "", video: "" })}
-                        className="absolute top-2 right-2 bg-white p-1 rounded-full shadow"
-                        aria-label="Remove media"
-                      >
-                        ✖
-                      </button>
-                    </div>
-                  </div>
-                )}
-                <input
-                  type="file"
-                  id="videoInput"
-                  accept="video/*"
-                  className="hidden"
-                  onChange={(e) => {
-                    const f = e.target.files && e.target.files[0];
-                    if (f) setNewPost({ ...newPost, video: URL.createObjectURL(f) });
-                  }}
-                />
+      {/* Hidden File Inputs */}
+      <input
+        type="file"
+        id="photoInput"
+        accept="image/*"
+        className="hidden"
+        onChange={(e) => {
+          const f = e.target.files && e.target.files[0];
+          if (f) setNewPost({ ...newPost, image: URL.createObjectURL(f) });
+        }}
+      />
+      <input
+        type="file"
+        id="videoInput"
+        accept="video/*"
+        className="hidden"
+        onChange={(e) => {
+          const f = e.target.files && e.target.files[0];
+          if (f) setNewPost({ ...newPost, video: URL.createObjectURL(f) });
+        }}
+      />
 
-                {/* Actions */}
-                <div className="flex justify-end gap-3">
-                  <button
-                    onClick={() => setShowCreate(false)}
-                    className="px-4 py-2 border rounded-lg hover:bg-gray-100"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    onClick={handleCreatePost}
-                    className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
-                  >
-                    Post
-                  </button>
-                </div>
-              </div>
-            </div>
-          )}
+      {/* Media Preview */}
+      {(newPost.image || newPost.video) && (
+        <div className="mb-4">
+          <div className="relative">
+            {newPost.image && (
+              <img
+                src={newPost.image}
+                alt="preview"
+                className="w-full max-h-64 object-contain rounded-lg"
+              />
+            )}
+            {newPost.video && (
+              <video
+                controls
+                src={newPost.video}
+                className="w-full max-h-64 rounded-lg"
+              />
+            )}
+            <button
+              onClick={() => setNewPost({ ...newPost, image: "", video: "" })}
+              className="absolute top-2 right-2 bg-white p-1 rounded-full shadow"
+              aria-label="Remove media"
+            >
+              ✖
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Actions */}
+      <div className="flex justify-end gap-3 sticky bottom-0 bg-white pt-2">
+        <button
+          onClick={() => setShowCreate(false)}
+          className="px-4 py-2 border rounded-lg hover:bg-gray-100"
+        >
+          Cancel
+        </button>
+        <button
+          onClick={handleCreatePost}
+          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+        >
+          Post
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+
 
           {/* Posts Feed */}
           {sortedPosts.map((post) => (
